@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useUser } from '@auth0/nextjs-auth0';
+import Link from 'next/link'
 
 export default function Navbar() {
   const { user, isLoading } = useUser();
@@ -9,20 +10,22 @@ export default function Navbar() {
       <p className = "text-2xl font-bold text-grey-800">Todo App</p>
       <div className = "flex">
         {user && (
-          <a 
-            href="/api/auth/logout"
-            className = "rounded bg-blue-500 hover:bg-blue-600 text-white py-2 px-sfasf4"
-          >
-              Logut
-          </a>
+          <Link href="/api/auth/logout">
+            <a 
+              className = "rounded bg-blue-500 hover:bg-blue-600 text-white py-2 px-sfasf4"
+            >
+                Logut
+            </a>
+          </Link>
         )}
         {!user && (
-          <a 
-            href="/api/auth/login"
-            className = "rounded bg-blue-500 hover:bg-blue-600 text-white py-2 px-sfasf4"
-          >
-              Login
-          </a>
+          <Link href="/api/auth/login">
+            <a 
+                className = "rounded bg-blue-500 hover:bg-blue-600 text-white py-2 px-sfasf4"
+              >
+                  Login
+              </a>
+          </Link>
         )}
       </div>
     </nav>
