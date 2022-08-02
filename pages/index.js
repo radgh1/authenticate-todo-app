@@ -9,6 +9,7 @@ import { useEffect, useContext } from 'react';
 import { getSession } from '@auth0/nextjs-auth0'
 import { useUser } from '@auth0/nextjs-auth0';
 import TodoForm from '../components/TodoForm';
+import 'initialTodos' and 'setTodos'
 
 export default function Home({ initialTodos }) {
   const { todos, setTodos } = useContext(TodosContext);
